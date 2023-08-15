@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 class TextItem extends StatelessWidget {
   const TextItem(this.prefix, this.prefixStyle,
-      [this.text = '',
-      // ignore: avoid_init_to_null
-      this.bodyStyle = null]);
+      [this.text = '', this.bodyStyle]);
 
   /// Prefix of the text.
   final String prefix;
@@ -16,7 +14,7 @@ class TextItem extends StatelessWidget {
   final String text;
 
   /// Style of the body text.
-  final TextStyle bodyStyle;
+  final TextStyle? bodyStyle;
 
   /// View Constants.
   static const double _textItemSpacing = 8.0;
@@ -33,12 +31,10 @@ class TextItem extends StatelessWidget {
                         text: prefix,
                         style: prefixStyle,
                         children: <TextSpan>[
-                  TextSpan(
-                      text: text,
-                      style:
-                          bodyStyle ?? prefixStyle.apply(color: Colors.black))
-                ])))
-          ],
-        ));
+                          TextSpan(
+                              text: text,
+                              style: bodyStyle ??
+                                  prefixStyle.apply(color: Colors.black))
+                        ])))
   }
 }
