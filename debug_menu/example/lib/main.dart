@@ -47,13 +47,13 @@ class _MyAppState extends State<MyApp> {
     final ToggleMenuAction toggleMenuItem = ToggleMenuAction(
         'Toggle Menu Item',
         'Toggles a menu item',
-        () => {print('Selected Toggle Menu Action')},
+        () => print('Selected Toggle Menu Action'),
         false);
 
     final SingleMenuAction singleMenuAction = SingleMenuAction(
         'Show a toast',
         'Sample display for a toast',
-        () => {print('Selected Single Menu Action')});
+        () => print('Selected Single Menu Action'));
 
     final SettingsAction settingsAction = SettingsAction();
 
