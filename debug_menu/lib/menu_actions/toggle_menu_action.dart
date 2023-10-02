@@ -13,7 +13,7 @@ class ToggleMenuAction implements MenuAction {
   String description;
 
   /// Callback for the action.
-  VoidCallback _actionSelectedCallback;
+  void Function(bool selected) _actionSelectedCallback;
 
   /// Flag to determine if the menu action is selected.
   bool selected;
@@ -22,6 +22,6 @@ class ToggleMenuAction implements MenuAction {
   /// Calls the action selected callback.
   void actionSelected() {
     selected = !selected;
-    _actionSelectedCallback();
+    _actionSelectedCallback(selected);
   }
 }

@@ -1,7 +1,7 @@
 abstract class MenuAction {
   /// Title of the menu action.
-  String title;
+  late String title;
 
   /// Description of the menu action.
-  String description;
+  late String description;
 }

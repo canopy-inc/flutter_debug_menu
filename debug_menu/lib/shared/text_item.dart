@@ -23,18 +23,17 @@ class TextItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.only(bottom: _textItemSpacing),
-        child: Row(
-          children: <Widget>[
-            Flexible(
-                child: RichText(
-                    text: TextSpan(
-                        text: prefix,
-                        style: prefixStyle,
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: text,
-                              style: bodyStyle ??
-                                  prefixStyle.apply(color: Colors.black))
-                        ])))
+        child: Row(children: <Widget>[
+          Flexible(
+              child: RichText(
+                  text: TextSpan(
+                      text: prefix,
+                      style: prefixStyle,
+                      children: <TextSpan>[
+                TextSpan(
+                    text: text,
+                    style: bodyStyle ?? prefixStyle.apply(color: Colors.black))
+              ])))
+        ]));
   }
 }

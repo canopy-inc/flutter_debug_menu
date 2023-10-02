@@ -6,8 +6,6 @@ import 'package:debug_menu/menu_actions/single_menu_action.dart';
 import 'package:debug_menu/menu_actions/toggle_menu_action.dart';
 import 'package:debug_menu/root_container.dart';
 import 'package:debug_menu/settings_action.dart';
-import 'package:debug_menu_dio_networking/core/network_activity.dart';
-import 'package:debug_menu_dio_networking/dio_networking_action.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -39,7 +37,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   List<MenuAction> _debugActions() {
-    final List<MenuAction> actions = List<MenuAction>();
+    final List<MenuAction> actions = [];
 
     final MultiMenuAction emptyMultiMenuAction =
         MultiMenuAction('Sample Empty Multi Action', []);
@@ -47,7 +45,7 @@ class _MyAppState extends State<MyApp> {
     final ToggleMenuAction toggleMenuItem = ToggleMenuAction(
         'Toggle Menu Item',
         'Toggles a menu item',
-        () => print('Selected Toggle Menu Action'),
+        (bool selected) => print('Selected Toggle Menu Action'),
         false);
 
     final SingleMenuAction singleMenuAction = SingleMenuAction(
@@ -60,10 +58,6 @@ class _MyAppState extends State<MyApp> {
     final ButtonAction action =
         ButtonAction("Test", () => print("This worked"));
 
-    final DioNetworkingAction dioNetworkingAction =
-        DioNetworkingAction(NetworkActivity.provideNetworkActivityScreen());
-
-    actions.add(dioNetworkingAction);
     actions.add(emptyMultiMenuAction);
     actions.add(toggleMenuItem);
     actions.add(singleMenuAction);

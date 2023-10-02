@@ -60,12 +60,7 @@ class _DebugMenuScreenState extends State<DebugMenuScreen> {
         centerTitle: true,
         elevation: 0,
         title: Text(_title),
-        actions: <Widget>[
-          FlatButton(
-            child: const Text('Back', textAlign: TextAlign.center),
-            onPressed: _onBackPressed,
-          )
-        ],
+        leading: BackButton(onPressed: _onBackPressed),
       ),
       body: ListView.builder(
         itemCount: _actions.length + 1,
@@ -127,10 +122,11 @@ class _DebugMenuScreenState extends State<DebugMenuScreen> {
       Expanded(
           child: Padding(
         padding: const EdgeInsets.all(Constants.defaultPadding),
-        child: FlatButton(
+        child: TextButton(
           child: Text(action.title, textAlign: TextAlign.left),
-          color: Colors.blueGrey[400],
-          textColor: Colors.white,
+          style: TextButton.styleFrom(
+            foregroundColor: Colors.blueGrey[400],
+          ),
           onPressed: action.tapped,
         ),
       ))
@@ -142,17 +138,17 @@ class _DebugMenuScreenState extends State<DebugMenuScreen> {
       Expanded(
           child: Padding(
         padding: const EdgeInsets.all(Constants.defaultPadding),
-        child: FlatButton(
+        child: TextButton(
           child: Text(action.title, textAlign: TextAlign.left),
-          color: Colors.blueGrey[400],
-          textColor: Colors.white,
+          style: TextButton.styleFrom(
+            foregroundColor: Colors.blueGrey[400],
+          ),
           onPressed: () => {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute<void>(
-                        builder: (BuildContext context) =>
-                            action.viewToRouteTo))
-              },
+            Navigator.push(
+                context,
+                MaterialPageRoute<void>(
+                    builder: (BuildContext context) => action.viewToRouteTo))
+          },
         ),
       ))
     ]);

@@ -27,7 +27,7 @@ public class SwiftDebugMenuPlugin: NSObject, FlutterPlugin {
 
   @discardableResult
   func openSettings() -> Bool {
-    guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString),
+    guard let settingsURL = URL(string: UIApplication.openSettingsURLString),
         UIApplication.shared.canOpenURL(settingsURL), #available(iOS 10.0, *) else {
             return false
     }

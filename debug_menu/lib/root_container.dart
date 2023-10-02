@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 ///This class wraps the top level widget in order to provide debug functionality to the applicationn
 class RootDebugContainer extends StatefulWidget {
   const RootDebugContainer(
-      {@required this.child,
-      @required this.title,
-      @required this.menuActions,
-      @required this.isProduction,
+      {required this.child,
+      required this.title,
+      required this.menuActions,
+      required this.isProduction,
       this.gestureType = GestureType.doubleTap});
 
   /// Root widget of the application.
